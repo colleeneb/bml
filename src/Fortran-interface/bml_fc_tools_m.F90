@@ -5,21 +5,21 @@ module bml_fc_tools_m
   implicit none
   private
 
-  public :: f_c_string
+  public :: bml_f_c_string
 
   integer, parameter :: LEN_C_NULL_CHAR = len(C_NULL_CHAR)
 
 contains
 
   !> Returns the trimmed length of the string with NULL termination added.
-  pure function len_f_c_string(fstr) result(strlen)
+  pure function bml_len_f_c_string(fstr) result(strlen)
 
     character(len=*, kind=C_CHAR), intent(in) :: fstr
     integer :: strlen
 
     strlen = len_trim(fstr) + LEN_C_NULL_CHAR
 
-  end function len_f_c_string
+  end function bml_len_f_c_string
 
   !> Returns a NULL terminated C-style string.
   !!
